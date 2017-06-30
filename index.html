@@ -1,28 +1,59 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
 <meta name="theme-color" content="#ff6600" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
 <title>DMHZ</title>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
+<script type="text/javascript" src="js/type.js"></script>
+<script type="text/javascript" src="js/btn.js"></script>
+<audio id="player" src="music.mp3"></audio>
 
 </head>
 
-<body style="margin:0;padding:0;background:#ffe;font-size:12px;overflow:auto">
+<link href="css/page.css" rel="stylesheet" type="text/css" />
+<link href="css/btn.css" rel="stylesheet" type="text/css" />
+<body style="background:#ffe;">
 
+	<div class="screen">
 
-    <div id="loveHeart" style="float:left;width:670px;height:625px">
-        <canvas id="garden" style="width:100%;height:100%"></canvas>
-    </div>
+		<div class="first">
+			<h1>404</h1>
+			<p>Error occurred! - File not Found</p>
+			<p><a href='javascript:document.getElementById("player").play();$(".first").fadeOut(5000);$(".sencond").show(); setTimeout(startHeartAnimation, 8000);'>Because...</a></p>
+		</div>
 
+		<div class="sencond">
+			<canvas id="garden"></canvas>
+		</div>
+		
+		<div class="third">
+			<div id="code">
+				床前明月光<br />
+				疑是地上霜<br />
+				举头望明月<br />
+				低头思故乡<br />
+			</div>
+		</div>
+		
+		<div class="fourth">
+			<div class="btn">
+				<div class="btn-back">
+					<p>你是怎么想的</p>
+					<button class="yes">让我想想</button>
+					<button class="no">神经病吧...</button>
+				</div>
+				<div class="btn-front">So...</div>
+			</div>
+		</div>
 
-<script type="text/javascript"> setTimeout(startHeartAnimation, 1000); </script>
-
+	</div>
 </body>
 </html>

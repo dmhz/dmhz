@@ -158,7 +158,7 @@
 	            max: 10
 	        },
 	        density: 10,
-	        growSpeed: 1000 / 60,
+	        growSpeed: 1000 / 100,
 	        color: {
 				rmin: 128,
 				rmax: 255,

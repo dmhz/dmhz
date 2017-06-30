@@ -1,22 +1,14 @@
-﻿var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
+﻿var garden,size=Math.min($(window).height(), $(window).width());
 
 $(function () {
-    // setup garden
-	$loveHeart = $("#loveHeart");
-	var offsetX = $loveHeart.width() / 2;
-	var offsetY = $loveHeart.height() / 2 - 55;
-    $garden = $("#garden");
-    gardenCanvas = $garden[0];
-	gardenCanvas.width = $("#loveHeart").width();
-    gardenCanvas.height = $("#loveHeart").height()
+    var gardenCtx, gardenCanvas;
+
+    gardenCanvas = $("#garden")[0];
+    gardenCanvas.width = size;
+    gardenCanvas.height = size;
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
-	
-	$("#loveHeart").css("width", $loveHeart.width());
-	$("#loveHeart").css("height", $loveHeart.height());
-	$("#loveHeart").css("margin-top", ($window.height() - $loveHeart.height()) / 2);
-	$("#loveHeart").css("margin-left", ($window.width() - $loveHeart.width()) / 2);
 
     // renderLoop
     setInterval(function () {
@@ -25,12 +17,10 @@ $(function () {
 });
 
 function getHeartPoint(angle) {
-    var offsetX = $loveHeart.width() / 2;
-	var offsetY = $loveHeart.height() / 2 - 55;
 	var t = angle / Math.PI;
-	var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
-	var y = - 20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-	return new Array(offsetX + x, offsetY + y);
+	var x = 16 * Math.pow(Math.sin(t), 3);
+	var y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+	return new Array(size / 2 + (size/40) * x, size / 2 +  (size/40) * (y-2.5));
 }
 
 function startHeartAnimation() {
@@ -54,6 +44,10 @@ function startHeartAnimation() {
 		}
 		if (angle >= 30) {
 			clearInterval(animationTimer);
+            setTimeout(function() {
+                $(".third").show();
+                $("#code").typewriter();
+            }, 1000);
 		} else {
 			angle += 0.2;
 		}
