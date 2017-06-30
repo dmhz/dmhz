@@ -3,6 +3,8 @@
 $(function () {
     var gardenCtx, gardenCanvas;
 
+    $("#garden").css("margin-top", ($(window).height() - size) / 2);
+    
     gardenCanvas = $("#garden")[0];
     gardenCanvas.width = size;
     gardenCanvas.height = size;
