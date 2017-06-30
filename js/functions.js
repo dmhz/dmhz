@@ -56,3 +56,8 @@ function startHeartAnimation() {
 	}, interval);
 }
 
+function start() {
+    document.getElementById("player").play();
+    $(".first").fadeOut(5000);$(".sencond").show();
+    setTimeout(startHeartAnimation, 8000);
+}
