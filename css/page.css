@@ -28,6 +28,7 @@ body {
 }
 
 .screen .loading{
+	background-color: #3498db;
 	position: absolute;
 	width: 100%;
 	height: 100%;
