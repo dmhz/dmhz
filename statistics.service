@@ -1,0 +1,12 @@
+[Unit]
+Description=Statistics Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/usr/local/bin
+ExecStart=/bin/env python3 statistics.py
+
+[Install]
+WantedBy=multi-user.target
