@@ -16,6 +16,10 @@
   animation: borderScale 1s infinite ease-in-out;
 }
 
+#loader-container p {
+    margin:0;
+}
+
 #loadingText {
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
