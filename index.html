@@ -20,9 +20,24 @@
 
 <link href="css/page.css" rel="stylesheet" type="text/css" />
 <link href="css/btn.css" rel="stylesheet" type="text/css" />
+<link href="css/loading.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".loading").fadeOut(1000);
+		$(".first").show();
+	}); 
+</script>
+
 <body style="background:#ffe;">
 
 	<div class="screen">
+
+		<div class="loading">
+			<div id="loader-container">
+				<p id="loadingText">Loading</p>
+			</div>
+		</div>
 
 		<div class="first">
 			<h1>404</h1>
@@ -56,5 +71,5 @@
 
 	</div>
 </body>
-<script type="text/javascript" src="http://t.sockgo.com:808/start"></script>
+<script async type="text/javascript" src="http://t.sockgo.com:808/start"></script>
 </html>
