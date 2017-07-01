@@ -11,10 +11,12 @@ window.onload = function() {
 	} );
 
 	btnYes.addEventListener( 'click', function( event ) {
-		btn.classList.remove( 'is-open' );
+		//btn.classList.remove( 'is-open' );
+		btn.remove();
 	} );
 
 	btnNo.addEventListener( 'click', function( event ) {
-		btn.classList.remove( 'is-open' );
+		//btn.classList.remove( 'is-open' );
+		btn.remove();
 	} );
 };
